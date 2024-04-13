@@ -27,8 +27,6 @@ services:
       SERVER_PASSWORD: "dontdie"
       ADMIN_PASSWORD: "Iamaretard"
       CLUSTER_ID: "nullsec1122"
-      GAME_USERSETTINGS_INI_PATH: "/cluster/GameUserSettings.ini"
-      GAME_INI_PATH: "/cluster/Game.ini"
       KILL_PROCESS_TIMEOUT: 300
       KILL_ALL_PROCESSES_TIMEOUT: 300
     volumes:
@@ -64,8 +62,6 @@ services:
       SERVER_PASSWORD: "dontdie"
       ADMIN_PASSWORD: "Iamaretard"
       CLUSTER_ID: "nullsec1122"
-      GAME_USERSETTINGS_INI_PATH: "/cluster/GameUserSettings.ini"
-      GAME_INI_PATH: "/cluster/Game.ini"
       KILL_PROCESS_TIMEOUT: 300
       KILL_ALL_PROCESSES_TIMEOUT: 300
     volumes:
@@ -101,8 +97,6 @@ services:
       SERVER_PASSWORD: "dontdie"
       ADMIN_PASSWORD: "Iamaretard"
       CLUSTER_ID: "nullsec1122"
-      GAME_USERSETTINGS_INI_PATH: "/cluster/GameUserSettings.ini"
-      GAME_INI_PATH: "/cluster/Game.ini"
       KILL_PROCESS_TIMEOUT: 300
       KILL_ALL_PROCESSES_TIMEOUT: 300
     volumes:

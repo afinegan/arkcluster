@@ -49,6 +49,8 @@ COPY run.sh /etc/service/arkcluster/run
 RUN chmod +x /etc/service/arkcluster/run
 COPY arkmanager.cfg /etc/arkmanager/arkmanager.cfg
 COPY arkmanager-user.cfg /home/steam/arkmanager-user.cfg
+COPY /serversettings/config.Game.ini /etc/arkmanager/instances/config.Game.ini
+COPY /serversettings/config.GameUserSettings.ini /etc/arkmanager/instances/config.GameUserSettings.ini
 
 # Healthcheck
 COPY crontab /home/steam/crontab
@@ -90,8 +92,6 @@ ENV CRON_AUTO_UPDATE="0 */3 * * *" \
     SPECTATOR_PASSWORD="" \
     MODS="" \
     CLUSTER_ID="keepmesecret" \
-    GAME_USERSETTINGS_INI_PATH="" \
-    GAME_INI_PATH="" \
     KILL_PROCESS_TIMEOUT=300 \
     KILL_ALL_PROCESSES_TIMEOUT=300
 

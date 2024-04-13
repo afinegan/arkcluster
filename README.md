@@ -50,8 +50,8 @@ services:
       SPECTATOR_PASSWORD: "keepmesecret"
       MODS: "731604991"
       CLUSTER_ID: "myclusterid"
-      GAME_USERSETTINGS_INI_PATH: "/cluster/myclusterid.GameUserSettings.ini"
-      GAME_INI_PATH: "/cluster/myclusterid.Game.ini"
+      GAME_USERSETTINGS_INI_PATH: "/cluster/myclusterid.config.GameUserSettings.ini"
+      GAME_INI_PATH: "/cluster/myclusterid.config.Game.ini"
       KILL_PROCESS_TIMEOUT: 300
       KILL_ALL_PROCESSES_TIMEOUT: 300
     volumes:
@@ -88,8 +88,8 @@ services:
       SPECTATOR_PASSWORD: "keepmesecret"
       MODS: "731604991"
       CLUSTER_ID: "myclusterid"
-      GAME_USERSETTINGS_INI_PATH: "/cluster/myclusterid.GameUserSettings.ini"
-      GAME_INI_PATH: "/cluster/myclusterid.Game.ini"
+      GAME_USERSETTINGS_INI_PATH: "/cluster/myclusterid.config.GameUserSettings.ini"
+      GAME_INI_PATH: "/cluster/myclusterid.config.Game.ini"
       KILL_PROCESS_TIMEOUT: 300
       KILL_ALL_PROCESSES_TIMEOUT: 300
     volumes:
