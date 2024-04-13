@@ -1,8 +1,8 @@
 version: "3"
 
 services:
-  island:
-    image: r15ch13/arkcluster:latest
+  theisland:
+    image: afinegan/arkcluster:latest
     deploy:
       mode: global
     environment:
@@ -17,30 +17,29 @@ services:
       TZ: "UTC"
       MAX_BACKUP_SIZE: 500
       SERVERMAP: "TheIsland"
-      SESSION_NAME: "ARK Cluster TheIsland"
-      MAX_PLAYERS: 15
+      SESSION_NAME: "[TheIsland]-NullSec Dedicated"
+      MAX_PLAYERS: 40
       RCON_ENABLE: "True"
       QUERY_PORT: 15000
-      GAME_PORT: 15002
+      GAME_PORT: 15001
       RCON_PORT: 15003
       SERVER_PVE: "False"
-      SERVER_PASSWORD: ""
-      ADMIN_PASSWORD: "keepmesecret"
-      SPECTATOR_PASSWORD: "keepmesecret"
-      MODS: "731604991"
-      CLUSTER_ID: "myclusterid"
-      GAME_USERSETTINGS_INI_PATH: "/cluster/myclusterid.GameUserSettings.ini"
-      GAME_INI_PATH: "/cluster/myclusterid.Game.ini"
+      SERVER_PASSWORD: "dontdie"
+      ADMIN_PASSWORD: "Iamaretard"
+      CLUSTER_ID: "nullsec1122"
+      GAME_USERSETTINGS_INI_PATH: "/cluster/GameUserSettings.ini"
+      GAME_INI_PATH: "/cluster/Game.ini"
       KILL_PROCESS_TIMEOUT: 300
       KILL_ALL_PROCESSES_TIMEOUT: 300
     volumes:
-      - data_island:/ark
+      - data_theisland:/ark
       - cluster:/cluster
     ports:
+      - "15000-15003:15000-15003/tcp"
       - "15000-15003:15000-15003/udp"
 
-  valguero:
-    image: r15ch13/arkcluster:latest
+  fjordur:
+    image: afinegan/arkcluster:latest
     deploy:
       mode: global
     environment:
@@ -54,30 +53,67 @@ services:
       GROUP_ID: 1000
       TZ: "UTC"
       MAX_BACKUP_SIZE: 500
-      SERVERMAP: "Valguero_P"
-      SESSION_NAME: "ARK Cluster Valguero"
-      MAX_PLAYERS: 15
-      RCON_ENABLE: "False"
+      SERVERMAP: "Fjordur"
+      SESSION_NAME: "[Fjordur]-NullSec Dedicated"
+      MAX_PLAYERS: 40
+      RCON_ENABLE: "True"
       QUERY_PORT: 15010
-      GAME_PORT: 15012
+      GAME_PORT: 15011
       RCON_PORT: 15013
       SERVER_PVE: "False"
-      SERVER_PASSWORD: ""
-      ADMIN_PASSWORD: "keepmesecret"
-      SPECTATOR_PASSWORD: "keepmesecret"
-      MODS: "731604991"
-      CLUSTER_ID: "myclusterid"
-      GAME_USERSETTINGS_INI_PATH: "/cluster/myclusterid.GameUserSettings.ini"
-      GAME_INI_PATH: "/cluster/myclusterid.Game.ini"
+      SERVER_PASSWORD: "dontdie"
+      ADMIN_PASSWORD: "Iamaretard"
+      CLUSTER_ID: "nullsec1122"
+      GAME_USERSETTINGS_INI_PATH: "/cluster/GameUserSettings.ini"
+      GAME_INI_PATH: "/cluster/Game.ini"
       KILL_PROCESS_TIMEOUT: 300
       KILL_ALL_PROCESSES_TIMEOUT: 300
     volumes:
-      - data_valguero:/ark
+      - data_fjordur:/ark
       - cluster:/cluster
     ports:
+      - "15010-15013:15010-15013/tcp"
       - "15010-15013:15010-15013/udp"
 
+  aberration:
+    image: afinegan/arkcluster:latest
+    deploy:
+      mode: global
+    environment:
+      CRON_AUTO_UPDATE: "15 */3 * * *"
+      CRON_AUTO_BACKUP: "15 */1 * * *"
+      UPDATEONSTART: 1
+      BACKUPONSTART: 1
+      BACKUPONSTOP: 1
+      WARNONSTOP: 1
+      USER_ID: 1000
+      GROUP_ID: 1000
+      TZ: "UTC"
+      MAX_BACKUP_SIZE: 500
+      SERVERMAP: "Aberration_P"
+      SESSION_NAME: "[Aberration]-NullSec Dedicated"
+      MAX_PLAYERS: 40
+      RCON_ENABLE: "True"
+      QUERY_PORT: 15020
+      GAME_PORT: 15021
+      RCON_PORT: 15023
+      SERVER_PVE: "False"
+      SERVER_PASSWORD: "dontdie"
+      ADMIN_PASSWORD: "Iamaretard"
+      CLUSTER_ID: "nullsec1122"
+      GAME_USERSETTINGS_INI_PATH: "/cluster/GameUserSettings.ini"
+      GAME_INI_PATH: "/cluster/Game.ini"
+      KILL_PROCESS_TIMEOUT: 300
+      KILL_ALL_PROCESSES_TIMEOUT: 300
+    volumes:
+      - data_aberration:/ark
+      - cluster:/cluster
+    ports:
+      - "15020-15023:15020-15023/tcp"
+      - "15020-15023:15020-15023/udp"
+
 volumes:
-  data_island:
-  data_valguero:
+  data_theisland:
+  data_fjordur:
+  data_aberration:
   cluster:

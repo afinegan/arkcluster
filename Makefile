@@ -1,10 +1,10 @@
 build:
-	docker build -f Dockerfile . -t r15ch13/arkcluster:dev
+	docker build -f Dockerfile . -t afinegan/arkcluster:dev
 
 clean:
-	docker image rm r15ch13/arkcluster:dev ||:
+	docker image rm afinegan/arkcluster:dev ||:
 
 push:
-	docker image push r15ch13/arkcluster:dev
+	docker image push afinegan/arkcluster:dev
 
 all: clean build push
