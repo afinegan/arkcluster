@@ -21,14 +21,12 @@ EOT
 
 ARG ARKMANAGER_VERSION=1.6.62
 
-ENV USER_ID=1000 \
-    GROUP_ID=1000
-
-RUN <<EOT bash # Add steam user
-    addgroup --gid "$GROUP_ID" steam
-    adduser --system --uid "$USER_ID" --gid "$GROUP_ID" --shell /bin/bash steam
+# Add steam user and group
+RUN groupadd steam && \
+    useradd -r -g steam -d /home/steam -s /bin/bash steam && \
+    mkdir -p /home/steam && \
+    chown steam:steam /home/steam && \
     usermod -a -G docker_env steam
-EOT
 
 RUN <<EOT bash # Install ark-server-tools
     curl -sqL "https://github.com/arkmanager/ark-server-tools/archive/refs/tags/v${ARKMANAGER_VERSION}.tar.gz" | tar zxvf -
