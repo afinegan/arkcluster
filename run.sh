@@ -57,6 +57,8 @@ fi
 
 if [ ! -d /ark/server/ShooterGame/Saved/Config/LinuxServer ]; then
   mkdir -p /ark/server/ShooterGame/Saved/Config/LinuxServer
+  cp /home/steam/config.Game.ini /ark/server/ShooterGame/Saved/Config/LinuxServer/Game.ini
+  cp /home/steam/config.GameUserSettings.ini /ark/server/ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini
 fi
 
 # We overwrite the default files and settings each time
