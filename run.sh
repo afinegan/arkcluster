@@ -57,7 +57,7 @@ fi
 
 # We overwrite the default files and settings each time
 cp /home/steam/arkmanager-user.cfg /ark/default/arkmanager.cfg
-cp /home/steam/config,Game.ini /ark/config.Game.ini
+cp /home/steam/config.Game.ini /ark/config.Game.ini
 cp /home/steam/config.GameUserSettings.ini /ark/config.GameUserSettings.ini
 
 # Copy default arkmanager.cfg if it doesn't exist
