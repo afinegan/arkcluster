@@ -57,6 +57,7 @@ fi
 
 if [ ! -d /ark/server/ShooterGame/Saved/Config/LinuxServer ]; then
   mkdir -p /ark/server/ShooterGame/Saved/Config/LinuxServer
+  chown
   cp /home/steam/config.Game.ini /ark/server/ShooterGame/Saved/Config/LinuxServer/Game.ini
   cp /home/steam/config.GameUserSettings.ini /ark/server/ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini
 fi
@@ -74,7 +75,7 @@ if [ ! -L /etc/arkmanager/instances/main.cfg ]; then
 fi
 
 # Put steam owner of directories (if the uid changed, then it's needed)
-chown -R steam:steam /ark /home/steam /cluster
+chown -R steam:steam /ark /home/steam /cluster /home/steam/config.Game.ini /ark/server/ShooterGame/Saved
 log "###########################################################################"
 
 if [ ! -d /ark/server ] || [ ! -f /ark/server/version.txt ]; then
