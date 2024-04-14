@@ -33,8 +33,6 @@ services:
       BACKUPONSTART: 1
       BACKUPONSTOP: 1
       WARNONSTOP: 1
-      USER_ID: 1000
-      GROUP_ID: 1000
       TZ: "UTC"
       MAX_BACKUP_SIZE: 500
       SERVERMAP: "TheIsland"
@@ -71,8 +69,6 @@ services:
       BACKUPONSTART: 1
       BACKUPONSTOP: 1
       WARNONSTOP: 1
-      USER_ID: 1000
-      GROUP_ID: 1000
       TZ: "UTC"
       MAX_BACKUP_SIZE: 500
       SERVERMAP: "Valguero_P"

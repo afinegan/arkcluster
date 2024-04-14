@@ -9,8 +9,6 @@ log "###########################################################################
 log "# Started  - $(date)"
 log "# Server   - ${SESSION_NAME}"
 log "# Cluster  - ${CLUSTER_ID}"
-log "# User     - ${USER_ID}"
-log "# Group    - ${GROUP_ID}"
 log "###########################################################################"
 [ -p /tmp/FIFO ] && rm /tmp/FIFO
 mkfifo /tmp/FIFO
@@ -35,17 +33,6 @@ function stop {
     rm -f /ark/server/.stopping-server
     exit
 }
-
-# Change the USER_ID if needed
-if [ ! "$(id -u steam)" -eq "$USER_ID" ]; then
-    log "Changing steam uid to $USER_ID."
-    usermod -o -u "$USER_ID" steam
-fi
-# Change gid if needed
-if [ ! "$(id -g steam)" -eq "$GROUP_ID" ]; then
-    log "Changing steam gid to $GROUP_ID."
-    groupmod -o -g "$GROUP_ID" steam
-fi
 
 [ ! -d /ark/log ] && mkdir /ark/log
 [ ! -d /ark/backup ] && mkdir /ark/backup
