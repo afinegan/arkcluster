@@ -36,10 +36,10 @@ RUN <<EOT bash # Install ark-server-tools
     rm -r "ark-server-tools-${ARKMANAGER_VERSION}"
 EOT
 
-RUN <<EOT bash # Create required directories
-    mkdir -p /ark/{log,backup,staging,default,steam,.steam}
-    mkdir -p /cluster
-EOT
+RUN mkdir -p /ark/log /ark/backup /ark/staging /ark/default /ark/steam /ark/.steam /cluster
+
+# Fix permissions
+RUN chown steam:steam -R /ark /cluster /home/steam
 
 # Setup arkcluster
 RUN mkdir -p /etc/service/arkcluster
