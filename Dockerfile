@@ -47,8 +47,8 @@ COPY run.sh /etc/service/arkcluster/run
 RUN chmod +x /etc/service/arkcluster/run
 COPY arkmanager.cfg /etc/arkmanager/arkmanager.cfg
 COPY arkmanager-user.cfg /home/steam/arkmanager-user.cfg
-COPY /serversettings/config.Game.ini /etc/arkmanager/instances/config.Game.ini
-COPY /serversettings/config.GameUserSettings.ini /etc/arkmanager/instances/config.GameUserSettings.ini
+COPY /serversettings/config.Game.ini /etc/arkmanager/config.Game.ini
+COPY /serversettings/config.GameUserSettings.ini /etc/arkmanager/config.GameUserSettings.ini
 
 # Healthcheck
 COPY crontab /home/steam/crontab

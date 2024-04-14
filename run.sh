@@ -55,8 +55,10 @@ if [ ! -f /etc/cron.d/arkbackup ]; then
     echo "$CRON_AUTO_BACKUP steam bash -l -c 'arkmanager backup --cluster >> /ark/log/ark-backup.log 2>&1'" > /etc/cron.d/arkbackup
 fi
 
-# We overwrite the default file each time
+# We overwrite the default files and settings each time
 cp /home/steam/arkmanager-user.cfg /ark/default/arkmanager.cfg
+cp /home/steam/config,Game.ini /ark/config.Game.ini
+cp /home/steam/config.GameUserSettings.ini /ark/config.GameUserSettings.ini
 
 # Copy default arkmanager.cfg if it doesn't exist
 [ ! -f /ark/arkmanager.cfg ] && cp /home/steam/arkmanager-user.cfg /ark/arkmanager.cfg
