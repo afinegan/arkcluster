@@ -55,6 +55,10 @@ if [ ! -f /etc/cron.d/arkbackup ]; then
     echo "$CRON_AUTO_BACKUP steam bash -l -c 'arkmanager backup --cluster >> /ark/log/ark-backup.log 2>&1'" > /etc/cron.d/arkbackup
 fi
 
+if [ ! -d /ark/server/ShooterGame/Saved/Config/LinuxServer ]; then
+  mkdir -p /ark/server/ShooterGame/Saved/Config/LinuxServer
+fi
+
 # We overwrite the default files and settings each time
 cp /home/steam/arkmanager-user.cfg /ark/default/arkmanager.cfg
 cp /home/steam/config.Game.ini /ark/config.Game.ini
