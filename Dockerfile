@@ -33,7 +33,7 @@ RUN <<EOT bash # Install ark-server-tools
     pushd "./ark-server-tools-${ARKMANAGER_VERSION}/tools"
     ./install.sh steam --bindir=/usr/bin
     popd
-    rm -r "ark-server-tools-${ARKMANAGER_VERSION}"
+    # rm -r "ark-server-tools-${ARKMANAGER_VERSION}"
 EOT
 
 RUN mkdir -p /ark/log /ark/backup /ark/staging /ark/default /ark/steam /ark/.steam /cluster

@@ -63,7 +63,7 @@ cp /home/steam/config.GameUserSettings.ini /ark/config.GameUserSettings.ini
 # Copy default arkmanager.cfg if it doesn't exist
 [ ! -f /ark/arkmanager.cfg ] && cp /home/steam/arkmanager-user.cfg /ark/arkmanager.cfg
 if [ ! -L /etc/arkmanager/instances/main.cfg ]; then
-    rm /etc/arkmanager/instances/main.cfg
+    #rm /etc/arkmanager/instances/main.cfg
     ln -s /ark/arkmanager.cfg /etc/arkmanager/instances/main.cfg
 fi
 
