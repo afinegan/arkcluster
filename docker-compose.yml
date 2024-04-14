@@ -27,6 +27,7 @@ services:
       CLUSTER_ID: "nullsec1122"
       KILL_PROCESS_TIMEOUT: 300
       KILL_ALL_PROCESSES_TIMEOUT: 300
+      MODS: "731604991,1404697612,821530042"
     volumes:
       - data_theisland:/ark
       - cluster:/cluster
@@ -60,6 +61,7 @@ services:
       CLUSTER_ID: "nullsec1122"
       KILL_PROCESS_TIMEOUT: 300
       KILL_ALL_PROCESSES_TIMEOUT: 300
+      MODS: "731604991,1404697612,821530042"
     volumes:
       - data_fjordur:/ark
       - cluster:/cluster
@@ -93,6 +95,7 @@ services:
       CLUSTER_ID: "nullsec1122"
       KILL_PROCESS_TIMEOUT: 300
       KILL_ALL_PROCESSES_TIMEOUT: 300
+      MODS: "731604991,1404697612,821530042"
     volumes:
       - data_aberration:/ark
       - cluster:/cluster
