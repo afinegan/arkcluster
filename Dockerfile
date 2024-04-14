@@ -1,8 +1,8 @@
 # syntax=docker/dockerfile:1
-FROM phusion/baseimage:jammy-1.0.1
+FROM phusion/baseimage:jammy-1.0.3
 # https://github.com/phusion/baseimage-docker
 
-LABEL org.opencontainers.image.authors="Andrew FInegan <andrew.finegan@gmail.com>" \
+LABEL org.opencontainers.image.authors="Andrew Finegan <andrew.finegan@gmail.com>" \
       org.opencontainers.image.title="ARK Cluster Image" \
       org.opencontainers.image.description="ARK Cluster Image" \
       org.opencontainers.image.url="https://github.com/afinegan/arkcluster" \
