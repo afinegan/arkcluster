@@ -34,6 +34,7 @@ services:
     ports:
       - "15000-15003:15000-15003/tcp"
       - "15000-15003:15000-15003/udp"
+    restart: unless-stopped
 
   fjordur:
     image: afinegan/arkcluster:latest
@@ -68,6 +69,7 @@ services:
     ports:
       - "15010-15013:15010-15013/tcp"
       - "15010-15013:15010-15013/udp"
+    restart: unless-stopped
 
   aberration:
     image: afinegan/arkcluster:latest
@@ -102,6 +104,7 @@ services:
     ports:
       - "15020-15023:15020-15023/tcp"
       - "15020-15023:15020-15023/udp"
+    restart: unless-stopped
 
 volumes:
   data_theisland:
