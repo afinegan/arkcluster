@@ -66,7 +66,7 @@ RUN mkdir -p ~/steamcmd && \
 
 # Set environment variables
 ENV CRON_AUTO_UPDATE="0 */3 * * *" \
-    CRON_AUTO_BACKUP="0 */1 * * *" \
+    CRON_AUTO_BACKUP="*/5 * * * *" \
     UPDATEONSTART=1 \
     BACKUPONSTART=1 \
     BACKUPONSTOP=1 \
