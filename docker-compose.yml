@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  theisland:
+  ragnarok:
     image: afinegan/arkcluster:latest
     deploy:
       mode: global
@@ -14,13 +14,13 @@ services:
       WARNONSTOP: 1
       TZ: "UTC"
       MAX_BACKUP_SIZE: 500
-      SERVERMAP: "TheIsland"
-      SESSION_NAME: "[TheIsland]-NullSec Dedicated"
+      SERVERMAP: "Ragnarok"
+      SESSION_NAME: "[Ragnarok]-NullSec Dedicated"
       MAX_PLAYERS: 40
       RCON_ENABLE: "True"
-      QUERY_PORT: 15000
-      GAME_PORT: 15001
-      RCON_PORT: 15003
+      QUERY_PORT: 15030
+      GAME_PORT: 15031
+      RCON_PORT: 15033
       SERVER_PVE: "False"
       SERVER_PASSWORD: "dontdie"
       ADMIN_PASSWORD: "Iamaretard"
@@ -29,84 +29,120 @@ services:
       KILL_ALL_PROCESSES_TIMEOUT: 300
       MODS: "731604991,1404697612,821530042"
     volumes:
-      - data_theisland:/ark
+      - data_ragnarok:/ark
       - cluster:/cluster
     ports:
-      - "15000-15003:15000-15003/tcp"
-      - "15000-15003:15000-15003/udp"
+      - "15030-15033:15030-15033/tcp"
+      - "15030-15033:15030-15033/udp"
     restart: unless-stopped
 
-  fjordur:
-    image: afinegan/arkcluster:latest
-    deploy:
-      mode: global
-    environment:
-      CRON_AUTO_UPDATE: "15 */3 * * *"
-      CRON_AUTO_BACKUP: "15 */1 * * *"
-      UPDATEONSTART: 1
-      BACKUPONSTART: 1
-      BACKUPONSTOP: 1
-      WARNONSTOP: 1
-      TZ: "UTC"
-      MAX_BACKUP_SIZE: 500
-      SERVERMAP: "Fjordur"
-      SESSION_NAME: "[Fjordur]-NullSec Dedicated"
-      MAX_PLAYERS: 40
-      RCON_ENABLE: "True"
-      QUERY_PORT: 15010
-      GAME_PORT: 15011
-      RCON_PORT: 15013
-      SERVER_PVE: "False"
-      SERVER_PASSWORD: "dontdie"
-      ADMIN_PASSWORD: "Iamaretard"
-      CLUSTER_ID: "nullsec1122"
-      KILL_PROCESS_TIMEOUT: 300
-      KILL_ALL_PROCESSES_TIMEOUT: 300
-      MODS: "731604991,1404697612,821530042"
-    volumes:
-      - data_fjordur:/ark
-      - cluster:/cluster
-    ports:
-      - "15010-15013:15010-15013/tcp"
-      - "15010-15013:15010-15013/udp"
-    restart: unless-stopped
+  # theisland:
+  #   image: afinegan/arkcluster:latest
+  #   deploy:
+  #     mode: global
+  #   environment:
+  #     CRON_AUTO_UPDATE: "0 */3 * * *"
+  #     CRON_AUTO_BACKUP: "0 */1 * * *"
+  #     UPDATEONSTART: 1
+  #     BACKUPONSTART: 1
+  #     BACKUPONSTOP: 1
+  #     WARNONSTOP: 1
+  #     TZ: "UTC"
+  #     MAX_BACKUP_SIZE: 500
+  #     SERVERMAP: "TheIsland"
+  #     SESSION_NAME: "[TheIsland]-NullSec Dedicated"
+  #     MAX_PLAYERS: 40
+  #     RCON_ENABLE: "True"
+  #     QUERY_PORT: 15000
+  #     GAME_PORT: 15001
+  #     RCON_PORT: 15003
+  #     SERVER_PVE: "False"
+  #     SERVER_PASSWORD: "dontdie"
+  #     ADMIN_PASSWORD: "Iamaretard"
+  #     CLUSTER_ID: "nullsec1122"
+  #     KILL_PROCESS_TIMEOUT: 300
+  #     KILL_ALL_PROCESSES_TIMEOUT: 300
+  #     MODS: "731604991,1404697612,821530042"
+  #   volumes:
+  #     - data_theisland:/ark
+  #     - cluster:/cluster
+  #   ports:
+  #     - "15000-15003:15000-15003/tcp"
+  #     - "15000-15003:15000-15003/udp"
+  #   restart: unless-stopped
 
-  aberration:
-    image: afinegan/arkcluster:latest
-    deploy:
-      mode: global
-    environment:
-      CRON_AUTO_UPDATE: "15 */3 * * *"
-      CRON_AUTO_BACKUP: "15 */1 * * *"
-      UPDATEONSTART: 1
-      BACKUPONSTART: 1
-      BACKUPONSTOP: 1
-      WARNONSTOP: 1
-      TZ: "UTC"
-      MAX_BACKUP_SIZE: 500
-      SERVERMAP: "Aberration_P"
-      SESSION_NAME: "[Aberration]-NullSec Dedicated"
-      MAX_PLAYERS: 40
-      RCON_ENABLE: "True"
-      QUERY_PORT: 15020
-      GAME_PORT: 15021
-      RCON_PORT: 15023
-      SERVER_PVE: "False"
-      SERVER_PASSWORD: "dontdie"
-      ADMIN_PASSWORD: "Iamaretard"
-      CLUSTER_ID: "nullsec1122"
-      KILL_PROCESS_TIMEOUT: 300
-      KILL_ALL_PROCESSES_TIMEOUT: 300
-      MODS: "731604991,1404697612,821530042"
-    volumes:
-      - data_aberration:/ark
-      - cluster:/cluster
-    ports:
-      - "15020-15023:15020-15023/tcp"
-      - "15020-15023:15020-15023/udp"
-    restart: unless-stopped
+  # fjordur:
+  #   image: afinegan/arkcluster:latest
+  #   deploy:
+  #     mode: global
+  #   environment:
+  #     CRON_AUTO_UPDATE: "15 */3 * * *"
+  #     CRON_AUTO_BACKUP: "15 */1 * * *"
+  #     UPDATEONSTART: 1
+  #     BACKUPONSTART: 1
+  #     BACKUPONSTOP: 1
+  #     WARNONSTOP: 1
+  #     TZ: "UTC"
+  #     MAX_BACKUP_SIZE: 500
+  #     SERVERMAP: "Fjordur"
+  #     SESSION_NAME: "[Fjordur]-NullSec Dedicated"
+  #     MAX_PLAYERS: 40
+  #     RCON_ENABLE: "True"
+  #     QUERY_PORT: 15010
+  #     GAME_PORT: 15011
+  #     RCON_PORT: 15013
+  #     SERVER_PVE: "False"
+  #     SERVER_PASSWORD: "dontdie"
+  #     ADMIN_PASSWORD: "Iamaretard"
+  #     CLUSTER_ID: "nullsec1122"
+  #     KILL_PROCESS_TIMEOUT: 300
+  #     KILL_ALL_PROCESSES_TIMEOUT: 300
+  #     MODS: "731604991,1404697612,821530042"
+  #   volumes:
+  #     - data_fjordur:/ark
+  #     - cluster:/cluster
+  #   ports:
+  #     - "15010-15013:15010-15013/tcp"
+  #     - "15010-15013:15010-15013/udp"
+  #   restart: unless-stopped
+
+  # aberration:
+  #   image: afinegan/arkcluster:latest
+  #   deploy:
+  #     mode: global
+  #   environment:
+  #     CRON_AUTO_UPDATE: "15 */3 * * *"
+  #     CRON_AUTO_BACKUP: "15 */1 * * *"
+  #     UPDATEONSTART: 1
+  #     BACKUPONSTART: 1
+  #     BACKUPONSTOP: 1
+  #     WARNONSTOP: 1
+  #     TZ: "UTC"
+  #     MAX_BACKUP_SIZE: 500
+  #     SERVERMAP: "Aberration_P"
+  #     SESSION_NAME: "[Aberration]-NullSec Dedicated"
+  #     MAX_PLAYERS: 40
+  #     RCON_ENABLE: "True"
+  #     QUERY_PORT: 15020
+  #     GAME_PORT: 15021
+  #     RCON_PORT: 15023
+  #     SERVER_PVE: "False"
+  #     SERVER_PASSWORD: "dontdie"
+  #     ADMIN_PASSWORD: "Iamaretard"
+  #     CLUSTER_ID: "nullsec1122"
+  #     KILL_PROCESS_TIMEOUT: 300
+  #     KILL_ALL_PROCESSES_TIMEOUT: 300
+  #     MODS: "731604991,1404697612,821530042"
+  #   volumes:
+  #     - data_aberration:/ark
+  #     - cluster:/cluster
+  #   ports:
+  #     - "15020-15023:15020-15023/tcp"
+  #     - "15020-15023:15020-15023/udp"
+  #   restart: unless-stopped
 
 volumes:
+  data_ragnarok:
   data_theisland:
   data_fjordur:
   data_aberration:
